@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="description" content="🍎 Fruit Catcher — a modern, dependency-free HTML5 game. Move your basket to catch falling fruit, build combos, dodge bombs, and grab power-ups." />
+  <title>🍎 Fruit Catcher</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="scene">
+    <!-- Animated orchard ambient background -->
+    <div class="bg-gradient"></div>
+    <canvas id="ambient" class="ambient"></canvas>
+
+    <!-- Game stage -->
+    <main class="stage">
+      <header class="topbar">
+        <h1 class="title">🍎 Fruit Catcher</h1>
+        <div class="hud glass">
+          <div class="hud-item">
+            <span class="hud-label">Score</span>
+            <span id="score" class="hud-value">0</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-label">Best</span>
+            <span id="best" class="hud-value">0</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-label">Combo</span>
+            <span id="combo" class="hud-value">x1</span>
+          </div>
+          <div class="hud-item">
+            <span class="hud-label">Lives</span>
+            <span id="lives" class="hud-value">❤❤❤</span>
+          </div>
+        </div>
+      </header>
+
+      <div class="canvas-wrap glass">
+        <canvas id="game"></canvas>
+
+        <!-- Overlay screens -->
+        <div id="overlay" class="overlay">
+          <div class="overlay-card glass">
+            <h2 id="overlay-title" class="overlay-title">🍎 Fruit Catcher</h2>
+            <p id="overlay-text" class="overlay-text">
+              Move your basket to catch the falling fruit and build combos.
+              Dodge the bombs — three hits and it's game over. Grab power-ups
+              for an edge. How high can you score?
+            </p>
+            <ul class="legend" id="legend">
+              <li><span class="chip fruit"></span> Fruit — catch for points &amp; combos</li>
+              <li><span class="chip bomb"></span> Bomb — costs a life, breaks combo</li>
+              <li><span class="chip life"></span> Heart — extra life</li>
+              <li><span class="chip slow"></span> Clock — slow-motion</li>
+              <li><span class="chip golden"></span> Star — bonus points</li>
+            </ul>
+            <button id="start-btn" class="btn btn-primary">Start Game</button>
+            <p class="hint" id="overlay-hint">Move: Arrow keys / A · D &nbsp;·&nbsp; Touch / Mouse: drag</p>
+          </div>
+        </div>
+      </div>
+
+      <footer class="footer">
+        <p id="controls-note">Controls: <b>← →</b> or <b>A / D</b> · <b>Space</b> to pause · drag on touch</p>
+      </footer>
+    </main>
+  </div>
+
+  <script src="game.js"></script>
+</body>
+</html>
