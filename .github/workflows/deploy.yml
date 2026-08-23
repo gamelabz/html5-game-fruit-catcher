@@ -29,22 +29,37 @@ jobs:
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     env:
-      # configure-pages@v5 targets Node 20, which is now deprecated/blocked on
-      # runners (Node 24 by default). Allow it to run on Node 20 so it works.
+      # configure-pages@v5 / deploy-pages@v5 target Node 20, which is now
+      # deprecated/blocked on runners (Node 24 by default). Allow them to run.
       ACTIONS_ALLOW_USE_UNSECURE_NODE_VERSION: true
     steps:
       - name: Checkout
         uses: actions/checkout@v4
+
+      - name: Enable GitHub Pages
+        # configure-pages' own `enablement` flag can fail to create the site on
+        # the very first run ("Get Pages site failed. Not Found"), so we enable
+        # Pages explicitly via the REST API. This is idempotent.
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+        run: |
+          if gh api "/repos/${{ github.repository }}/pages" >/dev/null 2>&1; then
+            echo "Pages already enabled"
+          else
+            echo "Enabling GitHub Pages (GitHub Actions build) for ${{ github.repository }}..."
+            gh api -X POST "/repos/${{ github.repository }}/pages" \
+              -f "build_type=workflow"
+          fi
+
       - name: Setup Pages
         uses: actions/configure-pages@v5
-        with:
-          # Auto-enable Pages (source: GitHub Actions) on first run.
-          enablement: force
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
           # Upload entire repository
           path: '.'
+
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
