@@ -1,53 +1,25 @@
-# 🍎 Fruit Catcher — Design Prompt
+# Fruit Catcher — Game Prompt
 
-## Overview
-Fruit Catcher is a single-player arcade catch game for the web. The player controls a
-basket at the bottom of the screen and slides it left/right to catch fruit that falls
-from the top. The goal is to maximize score before running out of lives. It is built
-as one self-contained HTML5 game with no dependencies, frameworks, or external assets.
+Build a modern, dependency-free HTML5 Canvas game called **Fruit Catcher**.
 
-## Core Loop
-- Fruit spawns at the top and falls toward the basket at increasing speed over time.
-- The player moves the basket horizontally to catch fruit in its opening.
-- Catching fruit increases the score and grows a **combo** multiplier.
-- Bombs also fall; catching one costs a life and resets the combo.
-- Missing a fruit breaks the combo but does not cost a life.
-- The run ends when all 3 lives are lost.
+## Concept
+Move your basket to catch the falling fruit and build combos while avoiding the rotten ones.
 
-## Player Controls
-- Keyboard: `←` / `→` or `A` / `D` to move; `Space` / `Enter` to pause and resume.
-- Touch / Mouse: press and drag horizontally anywhere on the play field.
-- Input must be smooth, responsive, and work on both desktop and mobile viewports.
+## Features
+  - Falling fruit with gravity
+  - Good vs bad items
+  - Combo scoring
 
-## Scoring & Progression
-- Each fruit is worth a base of 10 points multiplied by the current combo factor
-  (up to 3× at high combos).
-- Combos increase with each consecutive catch and reset on a miss or bomb.
-- Difficulty ramps with elapsed time: fall speed and bomb frequency both rise, while
-  spawn interval shrinks — so runs naturally accelerate.
+## Visual Style (required — "modern, attractive, today's style, innovative")
+- Dark animated gradient background and ambient particles.
+- Glassmorphism HUD panels (blurred translucent cards).
+- Gradient title text (background-clip) and gradient buttons.
+- Glowing elements (canvas shadowBlur), smooth animations, cohesive palette.
+- No external assets or network requests.
 
-## Power-Ups (occasional)
-- ❤️ **Heart** — grants one extra life (capped at 5).
-- 🕓 **Clock** — triggers slow-motion for several seconds, easing fall speed.
-- ★ **Golden fruit** — a rare bonus catch worth extra points and a strong combo boost.
+## Technical constraints
+- Vanilla JavaScript (ES2020+), single IIFE module, requestAnimationFrame loop.
+- No frameworks, no CDN, no libraries, no build step. Fully offline/self-contained.
 
-## Visual Direction
-- Dark, animated gradient "orchard at night" background with drifting leaves and
-  glowing fireflies (ambient canvas layer).
-- Glassmorphic HUD showing Score, Best, Combo, and Lives.
-- Gradient title and buttons; glowing, cohesive fruit, basket, and bomb visuals.
-- Juice: catch particles, floating score popups, screen flash on bombs, and a brief
-  screen shake when hit. Cohesive green/gold/fruit palette, no external assets.
-
-## Technical Requirements
-- Vanilla JavaScript (ES2020+) wrapped in an IIFE; `requestAnimationFrame` loop.
-- HTML5 `<canvas>` for rendering; `localStorage` for the persistent best score.
-- No frameworks, no CDN, no build step; all graphics and effects drawn in code.
-- Must be fully playable and bug-free in modern browsers; delta-time updates clamped
-  to avoid tunneling when the tab is backgrounded.
-
-## Deliverables
-- `index.html`, `style.css`, `game.js`, `README.md`, `README_fa.md`, `LICENSE`,
-  `package.json`, `.github/workflows/deploy.yml`, and an English `Prompt` file.
-- One-line summary: *A cozy, dependency-free HTML5 catch game — slide a glowing basket
-  to collect fruit, chain combos, dodge bombs, and grab power-ups for a high score.*
+## Files
+`index.html`, `style.css`, `game.js`, `assets/images/.gitkeep`, `assets/sounds/.gitkeep`, `README.md`, `README_fa.md`, `LICENSE`, `Prompt`, `package.json`, `.github/workflows/deploy.yml`.

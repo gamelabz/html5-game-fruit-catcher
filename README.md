@@ -1,33 +1,28 @@
 # 🍎 Fruit Catcher
 
-Move your basket left and right to catch falling fruit, build juicy combos, dodge bombs, and grab power-ups — a cozy arcade catch game with a dark animated orchard vibe.
+🍎 Fruit Catcher — a modern, dependency-free HTML5 game built with Canvas and vanilla JavaScript.
 
 🎮 **Play Online:** https://gamelabz.github.io/html5-game-fruit-catcher/
 
 ## 📸 Screenshot
 
-![🍎 Fruit Catcher](assets/images/screenshot.png)
+![Fruit Catcher](assets/images/screenshot.png)
 
 ## 🎯 About
 
-**Fruit Catcher** is a modern, dependency-free HTML5 game. Slide your glowing basket across the bottom of the screen to collect fruit. Every fruit you catch builds your **combo**, multiplying your score, but a missed fruit breaks the streak. Bombs cost a life and shatter your combo — catch three bombs and the game ends. Occasional power-ups (extra life, slow-motion, golden bonus) keep runs exciting. Your best score is saved locally, so you can always chase a new record.
+Move your basket to catch the falling fruit and build combos while avoiding the rotten ones.
 
 ## 🕹️ Controls
 
-- **Move basket:** `←` / `→` arrow keys or `A` / `D`
-- **Pause / Resume:** `Space` or `Enter`
-- **Touch / Mouse:** press and drag horizontally across the play area
+- Move: Mouse / Arrow keys
+- Pause: P
+- Restart: R
 
 ## ✨ Features
 
-- 🍎 Catch fruit to score and build **combos** for bigger multipliers
-- 💣 Dodge **bombs** — each costs a life and breaks your combo
-- ❤️ Occasional **power-ups**: extra life, slow-motion, and golden bonus fruit
-- 🌟 3 lives with a persistent **best score** via `localStorage`
-- 🌌 Dark animated gradient orchard background with glowing, glassmorphic HUD
-- ✨ Fall particles, floating score popups, screen shake, and ambient fireflies
-- 📱 Fully responsive — plays great on desktop, tablet, and phone
-- 🚫 Zero dependencies, no frameworks, no CDNs — pure vanilla JavaScript
+- Falling fruit with gravity
+- Good vs bad items
+- Combo scoring
 
 ## 🚀 Run Locally
 
